@@ -192,51 +192,52 @@ serving_optimization:
 
 ## Documentation Standards
 
-```markdown
-# Model Card Template
+## ## Model Details
+* **Name**: `fraud_detector_v2`
+* **Version**: `2.1.0`
+* **Type**: XGBoost Classifier
+* **Owner**: ML Team
+* **Date**: 2024-01-15
 
-## Model Details
-- **Name**: fraud_detector_v2
-- **Version**: 2.1.0
-- **Type**: XGBoost Classifier
-- **Owner**: ML Team
-- **Date**: 2024-01-15
+## ## Intended Use
+* **Primary use**: Real-time fraud detection
+* **Users**: Payment processing service
+* **Out of scope**: Credit scoring, identity verification
 
-## Intended Use
-- **Primary use**: Real-time fraud detection
-- **Users**: Payment processing service
-- **Out of scope**: Credit scoring, identity verification
+## ## Training Data
+* **Dataset**: `transactions_2023`
+* **Size**: 10M records
+* **Features**: 25
+* **Label distribution**: 1% fraud, 99% legitimate
 
-## Training Data
-- **Dataset**: transactions_2023
-- **Size**: 10M records
-- **Features**: 25
-- **Label distribution**: 1% fraud, 99% legitimate
+## ## Performance
 
-## Performance
 | Metric | Value |
-|--------|-------|
-| Accuracy | 0.95 |
-| Precision | 0.82 |
-| Recall | 0.75 |
-| F1 | 0.78 |
-| AUC | 0.92 |
+| :--- | :--- |
+| **Accuracy** | 0.95 |
+| **Precision** | 0.82 |
+| **Recall** | 0.75 |
+| **F1 Score** | 0.78 |
+| **AUC** | 0.92 |
 
-## Limitations
-- Performance degrades for new merchant categories
-- Higher false positive rate for international transactions
-- Requires retraining monthly
 
-## Ethical Considerations
-- Monitored for demographic bias
-- No personally identifiable features used
-- Regular fairness audits
 
-## Monitoring
-- Dashboard: grafana.company.com/fraud-model
-- Alerts: #ml-alerts Slack channel
-- Retraining trigger: F1 < 0.70 or PSI > 0.2
-```
+## ## Limitations
+* **Environment**: Performance degrades for new merchant categories.
+* **Geography**: Higher false positive rate for international transactions.
+* **Maintenance**: Requires retraining monthly to combat data drift.
+
+## ## Ethical Considerations
+* **Bias**: Monitored for demographic bias via slice-based evaluation.
+* **Privacy**: No personally identifiable features (PII) used in training.
+* **Audit**: Subject to regular fairness audits and model governance reviews.
+
+## ## Monitoring & Alerts
+* **Dashboard**: [Grafana - Fraud Model](https://grafana.company.com/fraud-model)
+* **Communication**: `#ml-alerts` Slack channel
+* **Retraining Triggers**: 
+    * $F1 < 0.70$
+    * $PSI > 0.2$
 
 ---
 
