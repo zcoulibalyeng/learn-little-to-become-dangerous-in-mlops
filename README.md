@@ -201,7 +201,6 @@ Modules 11-15: ██████████  Expert
 ## 📖 Reference Materials
 
 - **[QUICK-REFERENCE.md](QUICK-REFERENCE.md)** - MLOps cheat sheet
-- **[projects/](projects/)** - End-to-end examples
 
 ---
 
